@@ -1,27 +1,16 @@
-import logo from "./logo.svg"
-import "./App.css"
-import { useSelector } from "react-redux"
+import { store } from "../src/store/store"
+import { Provider } from "react-redux"
+import { ChakraProvider } from "@chakra-ui/react"
+import theme from "./styles/chakra/globalTheme"
+import Router from "./router/Router"
 
 function App() {
-  const count = useSelector((state) => state.example.value)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. Count value: {count}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ChakraProvider theme={theme}>
+        <Router />
+      </ChakraProvider>
+    </Provider>
   )
 }
 
