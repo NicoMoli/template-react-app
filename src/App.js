@@ -5,6 +5,7 @@ import theme from "./styles/chakra/globalTheme"
 import Router from "./router/Router"
 
 function App() {
+  // TODO: agregar componente error boundary!
   return (
     <Provider store={store}>
       <ChakraProvider theme={theme}>

@@ -4,6 +4,7 @@ import { appPublicRoutes, appPrivateRoutes } from "./routes"
 import { PrivatesRoutes } from "./components/PrivatesRoutes"
 
 const Router = () => {
+  // Falta configurar una ruta por defecto al inciar la APP
   return (
     <Suspense fallback={<div>Loading routes...</div>}>
       <BrowserRouter>
