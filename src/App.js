@@ -3,15 +3,17 @@ import { Provider } from "react-redux"
 import { ChakraProvider } from "@chakra-ui/react"
 import theme from "./styles/chakra/globalTheme"
 import Router from "./router/Router"
+import { ErrorBoundary } from "./services/errorBoundary/ErrorBoundary"
 
 function App() {
-  // TODO: agregar componente error boundary!
   return (
-    <Provider store={store}>
-      <ChakraProvider theme={theme}>
-        <Router />
-      </ChakraProvider>
-    </Provider>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <ChakraProvider theme={theme}>
+          <Router />
+        </ChakraProvider>
+      </Provider>
+    </ErrorBoundary>
   )
 }
 
