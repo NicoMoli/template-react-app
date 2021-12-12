@@ -1,15 +1,15 @@
 import { extendTheme } from "@chakra-ui/react"
+import { mode } from '@chakra-ui/theme-tools'
 
-// Version 1: Using objects
 const theme = extendTheme({
   styles: {
-    global: {
-      // styles for the `body`
+    global: (props) => ({
       body: {
-        bg: "gray.300",
-        color: "black",
+        color: mode('black', 'whiteAlpha.900')(props),
+        bg: mode('gray.200', 'gray.800')(props),
+        lineHeight: 'base',
       },
-    },
+    }),
   },
 })
 
